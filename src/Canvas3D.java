@@ -88,6 +88,19 @@ public class Canvas3D {
                 oy = e.getY();
             }
         });
+
+        panel.addMouseWheelListener(new MouseAdapter() {
+            @Override
+            public void mouseWheelMoved(MouseWheelEvent e) {
+                if (e.getWheelRotation() == -1) {
+                    camera = camera.forward(cameraSpeed);
+                    display();
+                } else if (e.getWheelRotation() == 1) {
+                    camera = camera.backward(cameraSpeed);
+                    display();
+                }
+            }
+        });
     }
 
     private void resizeListener() {
