@@ -1,5 +1,7 @@
 package rasterize;
+
 import model.Line;
+
 import java.awt.*;
 
 public abstract class LineRasterizer {

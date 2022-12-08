@@ -46,6 +46,7 @@ public class WireRenderer {
                 Vec3D v2 = transformToWindow(new Vec3D(bDehomog));
 
                 Line line = new Line((int) Math.round(v1.getX()), (int) Math.round(v1.getY()), (int) Math.round(v2.getX()), (int) Math.round(v2.getY()));
+                line.setColor(solid.getColor(i));
 
                 lineRasterizer.rasterize(line);
             }

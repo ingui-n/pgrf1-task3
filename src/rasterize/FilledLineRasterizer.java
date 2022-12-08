@@ -13,7 +13,7 @@ public class FilledLineRasterizer extends LineRasterizer {
 
     @Override
     public void drawLine(int x1, int y1, int x2, int y2, Color color, String type) {
-        this.color = color;
+        this.color = color == null ? Color.WHITE : color;
         this.type = type;
 
         float k = (y2 - y1) / (float) (x2 - x1);

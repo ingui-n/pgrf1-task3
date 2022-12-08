@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 
 public class RasterBufferedImage implements Raster {
     private final BufferedImage img;
-    private Color color;
+    private Color color = Color.WHITE;
 
     public RasterBufferedImage(int width, int height) {
         img = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
@@ -14,7 +14,7 @@ public class RasterBufferedImage implements Raster {
     @Override
     public void setPixel(int x, int y, Color color) {
         if (isOnRaster(x, y))
-            img.setRGB(x, y, color.getRGB());
+            img.setRGB(x, y, (color == null ? this.color : color).getRGB());
     }
 
     @Override
